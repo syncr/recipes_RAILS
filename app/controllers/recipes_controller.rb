@@ -42,7 +42,10 @@ class RecipesController < ApplicationController
   end
 
   def delete
-      flash[:notice] = "Removed Successfully."
+    @recipe = Recipe.find(params[:id])
+    @recipe.delete
+    flash[:notice] = "Removed Successfully."
+    redirect_to('/recipes')
   end
 
 end

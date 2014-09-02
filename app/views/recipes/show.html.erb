@@ -2,6 +2,12 @@
 <div class = "container-fluid">
   <h1><%= @recipe.name %></h1>
 
+<div class="row">
+  <% if @recipe.name == "Chilled Monkey Brains" %>
+    <img src="http://shirtoid.com/wp-content/uploads/2011/04/chilled-monkey-brains.jpg" width=200 height=200>
+  <% end %>
+</div>
+
   <div class = "row">
     <h2>Recipe Directions</h2>
     <p><%= @recipe.description %></p>
@@ -13,7 +19,7 @@
       </a>
     </div>
     <div class ="col-xs-1">
-      <a href="/recipes/<%= @recipe.id %>/edit">
+      <a href="/recipes/<%= @recipe.id %>" rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
         <span class="glyphicon glyphicon-trash"></span> Delete
       </a>
     </div>

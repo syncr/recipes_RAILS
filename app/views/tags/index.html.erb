@@ -1,0 +1,25 @@
+
+<div class = "container-fluid">
+  <h1>Tags</h1>
+
+  <div class = "row">
+    <h3>All tags</h3>
+    <ul>
+      <% @tags.each do |tag| %>
+        <li><p><a href="/tags/<%= tag.id %>"><%= tag.name %></a></p></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class = "row">
+    <h3>Input a new tag</h3>
+    <form action="/tags" method="post">
+      <%= render("/layouts/tag_form") %>
+      <button class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  <div id = "error_box" class = "row">
+    <%= render('/layouts/errors', :object => @tag) %>
+  </div>
+</div>

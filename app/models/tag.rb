@@ -1,6 +1,5 @@
 class Tag < ActiveRecord::Base
 
-  validates :recipe_id, presence: true
-  validates :tag_id, presence: true
+  validates :name, presence: true
 
 end

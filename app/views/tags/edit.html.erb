@@ -1,32 +1,25 @@
 <div class="container-fluid">
   <div class="row">
-    <h2>Recipe Detail</h2>
-    <% if @recipe.name != "" %>
-        <p>Recipe Name: <%= @recipe.name %></p>
+    <h2>Tag Detail</h2>
+    <% if @tag.name != "" %>
+        <p>Tag Name: <%= @tag.name %></p>
     <% else %>
-        <p>Recipe Name: Invalid entry.</p>
+        <p>Tag Name: Invalid entry.</p>
     <% end %>
-
-    <% if @recipe.description != "" %>
-      <p>Instructions: <%= @recipe.description %></p>
-    <% else %>
-      <p>Instructions: Incorrect Entry.</p>
-    <% end %>
-
   </div>
   <br><br>
   <div class="row">
-    <h4>Update Recipe Details</h4>
+    <h4>Update tag Details</h4>
 
-    <form action="/recipes/<%= @recipe.id %>" method="post">
+    <form action="/tags/<%= @tag.id %>" method="post">
       <input name="_method" type="hidden" value="patch">
-      <%= render('/layouts/form') %>
+      <%= render('/layouts/tag_form') %>
       <button class="btn btn-primary">Update</button>
     </form>
   </div>
 
   <div id = "error_box" class="row">
-    <%= render('/layouts/errors', :object => @recipe) %>
+    <%= render('/layouts/errors', :object => @tag) %>
   </div>
 
 </div>

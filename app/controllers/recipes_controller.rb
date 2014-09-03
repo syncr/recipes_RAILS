@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   def index
     @recipe = Recipe.new
     @recipes = Recipe.all
@@ -46,5 +45,4 @@ class RecipesController < ApplicationController
     flash[:notice] = "Removed Successfully."
     redirect_to('/recipes')
   end
-
 end

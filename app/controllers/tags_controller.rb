@@ -41,6 +41,10 @@ class TagsController < ApplicationController
   end
 
   def delete
+    @tag = Tag.find(params[:id])
+    @tag.delete
+    flash[:notice] = "Removed Successfully."
+    redirect_to('/tags')
   end
 
 end

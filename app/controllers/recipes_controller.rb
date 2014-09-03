@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
-      flash[:notice] = "Entered Successfully."
+      flash[:notice] = "Created Successfully."
       redirect_to("/recipes")
     else
       render("recipes/index.html.erb")

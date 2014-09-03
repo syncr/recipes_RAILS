@@ -1,3 +1,9 @@
+<script>
+function visibility()
+  {
+    document.getElementById("error_box").style.visibility="visible";
+  }
+</script>
 
 <div class = "container-fluid">
   <h1>Tags</h1>
@@ -15,7 +21,7 @@
     <h3>Input a new tag</h3>
     <form action="/tags" method="post">
       <%= render("/layouts/tag_form") %>
-      <button class="btn btn-success">Submit</button>
+      <button class="btn btn-success" onclick="visibility()">Submit</button>
     </form>
   </div>
 
